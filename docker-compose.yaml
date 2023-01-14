@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  etcd:
+    image: docker.io/bitnami/etcd:3.5
+    ports:
+      - '127.0.0.1:2379:2379'
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+    volumes:
+      - ./.cache/etcd:/bitnami/etcd
+    restart: always
